@@ -1,0 +1,783 @@
+guildID: 1009092392026124300
+adminIDs:
+- 989672946018693100
+- 636857417803497500
+searchLocations:
+  Aeradella's home:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: You found Celine in the living room, who was in a VR session and
+      was dropping coins everywhere, making you pick up ${amount}.
+    failMessage: You found ANANT, who was stuck in the washing machine and couldn't
+      give you anything but a stinky fart.
+    deathMessage: You ran into Slick, who was in the midst of rage quitting cause
+      he's bad at Brawlhalla and he threw a TV at you, killing you instantly.
+  Air:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: You found ${amount}, how the...?
+    failMessage: You found nothing! Why would you expect to find anything in the air?
+    deathMessage: You looked up in the air, and found nothing. You then died because
+      you forgot to breathe the air you were looking at.
+  Attic:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: You found ${amount}, I wonder who left that up there
+    failMessage: You found nothing! You also now have spider webs all over you, ew
+    deathMessage: You died from eating insulation, I TOLD you it wasn't cotton candy
+  Bank:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: You found ${amount}, DID YOU JUST ROB THAT BANK WTF
+    failMessage: You found nothing! Probably for the best, considering the security
+      at the bank...
+    deathMessage: While searching at the bank, someone robbed the place and didn't
+      like the funny look you gave them. You got shot and died.
+  Basement:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 0
+    successMessage: You found ${amount}, at least YOUR basement didn't flood :(
+    failMessage: Well... looks like you found nothing! What a waste of time
+    deathMessage:
+  Bathroom:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: You found ${amount} in the bathroom. It smells so bad but at least
+      you were rewarded.
+    failMessage: The smell of the bathroom was too awful and you ran away. I don't
+      blame you.
+    deathMessage: The smell of the bathroom was so awful, that you passed out, and
+      never woke up again.
+  Bed:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: You found ${amount}, so this is what you've been doing at night?
+    failMessage: You found nothing! Luckily you also didn't find any ladies of the
+      night, WHERE DID YOU HIDE THEM???
+    deathMessage: Oh there's the lady of the night, she killed you for mistreating
+      her
+  Beehive:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: You poke the beehive and find ${amount}! Lucky they didn't sting
+      you.
+    failMessage: You poke the beehive and they start chasing you!
+    deathMessage: You poke the beehive and they sting you to death.
+  Book:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: You pick up the book of knowledge. You become really smart and
+      earn ${amount}
+    failMessage: You pick up a book, get bored really fast, and fall asleep.
+    deathMessage: You pick up a book and get a paper cut! The infection was so bad
+      that you died.
+  Briefcase:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: You searched the briefcase and found ${amount}! How did they not
+      notice you?
+    failMessage: You searched the briefcase and they catch you! They call the cops
+      on you but you run away.
+    deathMessage: You try to search the briefcase but the owner catches you and kill
+      you with it.
+  Bus:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 0
+    successMessage: You found ${amount}, but its covered in old gum...
+    failMessage: Well... looks like you found nothing! What a waste of time
+    deathMessage:
+  Bushes:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: You found ${amount}, luckily you didn't get pricked you prick
+    failMessage: You found nothing! Also you're pretty sure a DMO mod manager lives
+      here
+    deathMessage: So excited to find some coins, you dove right into a prickly bush
+      and died. Congrats.
+  Car:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 0
+    successMessage: You found ${amount}, thank god for this idiot for leaving their
+      car unlocked
+    failMessage: You got caught! Next time don't try and break into a tesla you dunce.
+    deathMessage:
+  Coat:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 0
+    successMessage: You found ${amount}, wonder how long that's been there!
+    failMessage: Well... looks like you found nothing! What a waste of tim
+    deathMessage:
+  Coffee shop:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: You took a sip of coffee and found ${amount} inside of it. No
+      wonder it was so heavy.
+    failMessage: Turns out the coffee shop was closed today. You found nothing.
+    deathMessage: You drank a bit too much coffee and died lmao (totally possible
+      btw)
+  Computer:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 0
+    successMessage: You search for memes on your computer and found ${amount} out
+      of nowhere.
+    failMessage: Well... looks like you found nothing! What a waste of time
+    deathMessage:
+  Couch:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: You found ${amount}, I wonder how long you've been sitting on
+      this?
+    failMessage: You found nothing! What a boring couch
+    deathMessage: You forgot you stored your peanut butter in the couch cushions,
+      you're allergic and you died idiot
+  Crawlspace:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: You found ${amount}, why are you in your crawl space?
+    failMessage: You found nothing! Thank god you have a clean crawl space, I have
+      termites in mine.
+    deathMessage: You found a mutant spider living under here, and it decided to not
+      let you leave.
+  Dark room:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: You feel around and find ${amount}. Really sketchy room.
+    failMessage: You can't see anything so you just leave.
+    deathMessage: Something from the darkness bites you, and you die tragically.
+  Dank Museum:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: While exploring the museum you stumbled across an exhibit about
+      "pls commands", they used those back then?? A guy doing "pls search" next to
+      you dropped ${amount}, woohoo, free stuff!
+    failMessage: You got lost and couldn't find your way out until midnight, who knew
+      dank had so much history!
+    deathMessage: You were so mesmerized by a blob that you forgot to leave before
+      closing time. RIP
+  Discord:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: You searched through your dms and found ${amount}
+    failMessage: "(None)"
+    deathMessage: You got catfished on Discord, and uh, disappeared.
+  Dog:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: You found ${amount}, that poor poor dog...
+    failMessage: You found nothing! Also now your hand is covered in uh, brown stuff,
+      congrats.
+    deathMessage: The dog wasn't done with that, and bit you.
+  Dresser:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 0
+    successMessage: You found ${amount},  good thing the panty fairy visited!
+    failMessage: Well... looks like you found nothing! What a waste of time
+    deathMessage:
+  Dumpster:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: You found ${amount}, in addition you smell terrible. Do you live
+      here?
+    failMessage: You didn't find any coins. But hey, at least you found [item]!
+    deathMessage: A homeless man shared his sandwich, but sharing isn't always caring.
+      You died from whatever drugs were in the sandwich (it was meth probably lol)
+  Fridge:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 0
+    successMessage: You found ${amount}, why is it not cold?
+    failMessage: Hm nothing good in this fridge...
+    deathMessage:
+  Garage:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: You found ${amount}, the garage is full of treasures
+    failMessage: You found nothing! You should really clean this place out
+    deathMessage: As you searched your garage, your mom parked over you. You got parked
+      on bro LOL
+  Glovebox:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: You found ${amount}, guess you found the secret money stash your
+      mommy left you!
+    failMessage: You found nothing! Speaking of which, where did you leave your registration?
+    deathMessage: You got your hand stuck in the glove box, you overheated, and you
+      died
+  God's Own Place:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: You found ${amount}, guess what, God is indeed gracious!
+    failMessage: You tried asking for coins, but God is bored of folks like you, get
+      better!
+    deathMessage: You got deceived by the devil and died. Be careful who you trust,
+      the devil was once an angel.
+  Grass:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 0
+    successMessage: You found ${amount}, I wonder if the dog shat (shitted?) (pooped!)
+      these out
+    failMessage: Well... looks like you found nothing! What a waste of time
+    deathMessage:
+  Greg's Farm:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: You find Farmer Greg doing donuts in his tractor, you also find  ${amount}!
+    failMessage: Farmer Greg kicked you out, he doesn't want his beard stolen.
+    deathMessage: Farmer Greg is angry with you. He ran you over with his tractor.
+      You died.
+  Hospital:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: You found ${amount}, did you steal this from a sick person???
+    failMessage: You didn't find any coins.  But hey, at least you found [item]!
+    deathMessage: You walked into the infectious disease ward and contracted something
+      deadly. Dog ass disease again? (yes)
+  Immortals Dimension:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: A weird bot greets you with pictures of his feet?? It's not a
+      complete loss, you also found ${amount}.
+    failMessage: You tripped over a strange creature named Dim as they were counting
+      all the skulls along the path. You plummet back to the mortal world, alive but
+      with nothing.
+    deathMessage: You have been rejected by the Immortals and sentenced to everlasting
+      death.
+  Kitchen:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: You found ${amount} on the counter top, nobody knows who it belongs
+      to, so now it's yours! you can buy a snack now!
+    failMessage: The cold, lonely, barely lit empty test kitchen sent chills down
+      your spine, and you ran away! Scary...
+    deathMessage: You turned the lights on and the whole test kitchen exploded! there
+      was a gas leak and you died in the explosion!
+  Laundromat:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 0
+    successMessage: You found ${amount}, now you can do some laundry!
+    failMessage: "(None)"
+    deathMessage:
+  Lego bin:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: You avoided death by lego and found ${amount}
+    failMessage: Your feet hurt, but you are ALIVE! (With nothing to show for it)
+    deathMessage: You stepped on a single lego and died lol
+  Mailbox:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 0
+    successMessage: You found ${amount}, cool?
+    failMessage: Well... looks like you found nothing! What a waste of time
+    deathMessage:
+  McDonald's:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: You go to McDonald's and find ${amount} on the floor. Yummy.
+    failMessage: You go to McDonald's and their ice cream machine wasn't working.
+      What a shame.
+    deathMessage: You go to McDonald's and slipped on the McDonald's Sprite. You died
+      from hitting your head.
+  Movie Theater:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: You watch a dank movie and found ${amount} under the seat. Who
+      could've forgotten that!
+    failMessage: You watch a movie and fall asleep in the theater. You missed the
+      whole movie!
+    deathMessage: You try to watch a movie but someone wants your popcorn, and kills
+      you over it.
+  Ocean:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: You took a swim in the ocean and found ${amount} floating around.
+    failMessage: You took a swim in the ocean and got a cramp. Loser.
+    deathMessage: You search the ocean and die because you forgot how to swim!
+  Pantry:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 0
+    successMessage: You found ${amount}, Luckily you didn't eat them
+    failMessage: Well... looks like you found nothing! What a waste of time
+    deathMessage:
+  Phoenix pits:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: The Phoenix found you worthy and gave you ${amount}.
+    failMessage: Unfortunately the Pit entrance was not big enough for you, ever considered
+      going to the gym?
+    deathMessage: The Phoenix fire was unfortunately hotter than you so you burned
+      to death!
+  Pocket:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 0
+    successMessage: You found ${amount}, now it's in your wallet.
+    failMessage: Well... looks like you found nothing! What a waste of time
+    deathMessage:
+  Police officer:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: You searched the officer and confiscated ${amount}. Surprised
+      they were so accepting.
+    failMessage: The police officer shoved you away from them. Lucky that's all they
+      did.
+    deathMessage: They arrest you for being so weird.
+  Purse:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: You found ${amount}, now this poor old lady can't get her medicine.
+      Are you proud?
+    failMessage: You got caught! You convinced a cop to stay out of prison.
+    deathMessage: The old lady did NOT appreciate this, and hit you with her purse...
+      TO DEATH.
+  Sewer:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: You found ${amount}, why the heck is this down here
+    failMessage: You found nothing! I mean, who would think to look down here anyway?
+    deathMessage: You drowned in a river of poo and piss, how fun!
+  Shadow's Realm:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: You found Kookie and she blesses you with ⏣[amount]!
+    failMessage: DisgustedBeans laughed at you for begging for money. You get nothing.
+    deathMessage: Gojoe had enough of your crap and struck you with lightning. RIP.
+  Shoe:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 0
+    successMessage: You found ${amount}, why was this in your shoe lmfao?
+    failMessage: Well... looks like you found nothing! What a waste of time
+    deathMessage:
+  Sink:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: You found ${amount} in your dirty nasty sink, do your damn dishes!
+    failMessage: Well... looks like you found nothing! What a waste of time
+    deathMessage: None
+  Soul's chamber:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: Congratulations on making it to the end of the chamber. Royalty
+      like you deserves ${amount}.
+    failMessage: "(None)"
+    deathMessage: At the mercy of the royal guard, you were caught and killed right
+      on the spot!
+  Street:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: You found ${amount}, congrats on risking your life and profiting
+      from it.
+    failMessage: honest you're just lucky you didn't die idiot, thank god a cop was
+      not around too
+    deathMessage: You got hit by a car LOL. Next time lets NOT jump in front of traffic
+      for a few coins...
+  Stock Market:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: The stonks were good and Rotsevni was kind enough to spare you
+      ${amount}.
+    failMessage: The stonks were bad and Rotsevni told you to get out.
+    deathMessage: The stonks were bad enough to throw Rotsevni into a rage and kill
+      you instantly.
+  Supreme Court:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 0
+    successMessage: Wow, a common sense law got passed in the supreme court for once.
+      Still brainless idiots sitting on the bench. You took what was left of their
+      brains and got ${amount}.
+    failMessage: The supreme court is an invalid institution filled with brainless
+      nubs for humans that don't value women's lives. You get nothing and walk away
+      disappointed as most people do from their chambers. (And yes, this bot just
+      "GoT PoLiTiCal" and will continue to support women's basic rights to privacy
+      and their own bodies)
+    deathMessage:
+  Tesla:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: You broke into Badosz' Tesla and found ${amount}.
+    failMessage: Sentry mode on Badosz' Tesla set off an alarm and scared you away.
+      You get nothing but internet clout.
+    deathMessage: Badosz caught you breaking into his Tesla and Thanos snapped half
+      of humanity away, you included.
+  Toilet:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: You sat on the toilet for 13 hours and 23 minutes and found ${amount}.
+    failMessage: You fell asleep on the toilet and forgot what you were doing.
+    deathMessage: You destroyed the toilet and create deadly gas. You died.
+  Toxic waste plant:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: You broke into the toxic waste plant and actually found something
+      of value? You found ${amount}.
+    failMessage: You tried to break into the plant but kable was standing guard and
+      noticed you, run!
+    deathMessage: Some toxic dude with sunglasses caught you and... punished you.
+      With death.
+  Twitch:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: You watched some good Twitch streams and found ${amount}.
+    failMessage: You got onto the wrong side of Twitch and find the bikini hot tub
+      streams. You ran away shamefully.
+    deathMessage: XQC convinced you to try a new gambling site that has virtual russian
+      roulette... it did NOT go well for you (dead)
+  Twitter:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 0
+    successMessage: You found memes on Twitter and won ${amount}. I guess Twitter's
+      not so bad after all.
+    failMessage: Well... looks like you found nothing! What a waste of time
+    deathMessage:
+  Tree:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: You found ${amount}, why were you even looking in a tree?
+    failMessage: Your short stubby legs couldn't climb the tree LMAO
+    deathMessage: You fell out of the tree and died, imagine falling PFFF
+  Uber:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: You found ${amount}, did you just steal from your uber driver?
+    failMessage: You found nothing! Also the uber smells like burnt toes.
+    deathMessage: You looked for some coins but it turns out this wasn't an uber driver
+      at all. It was the guy who killed Epstein, and you got uh, Epsteined
+  Vacuum:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 0
+    successMessage: You found ${amount}, I guess it doesn't suck!
+    failMessage: Well... looks like you found nothing! What a waste of time
+    deathMessage:
+  Van:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: The middle aged guy in the van gave you ${amount}, this would
+      TOTALLY be the outcome irl too! Very realistic, Dank Memer!
+    failMessage: You didn't get anything from the van, but you also didn't die or
+      worse so... Winning?
+    deathMessage: The guy in the van promised you candy, and you believed him? You
+      died lmao.
+  Washer:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 0
+    successMessage: You found ${amount}, why was this in your washer lmfao?
+    failMessage: Well... looks like you found nothing! What a waste of time
+    deathMessage:
+  Who asked:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 0
+    successMessage: Holy cow someone actually asked! Here, the one who asked wanted
+      you to have ${amount}.
+    failMessage: Well... looks like you found nothing! What a waste of time
+    deathMessage:
+  ZomB's Grave:
+    minEarnings: 1000
+    maxEarnings: 5000
+    successChance: 90
+    deathChance: 10
+    successMessage: You've stumbled upon ZomB guarding her secret hoard. You manage
+      to escape, but wait... is that a bite mark on your arm?? At least you'll come
+      back from the dead with a portion of the riches. You found ${amount}.
+    failMessage: A hand grabs you through the dirt as you search, and you run away
+      screaming like a baby
+    deathMessage: Why would you dig in a zombie's grave? She ate your brains and you
+      died LOL
+items:
+  Rock:
+    icon: "\U0001FAA8"
+    description: It'll rock your world.
+    type: SELLABLE
+    price: 100
+  Coal:
+    icon: "<:coal:958320751226806313>"
+    description: Also works as a stocking stuffer.
+    type: SELLABLE
+    price: 125
+embeds:
+  invalidNumber:
+    description: Amount must be a positive integer.
+    color: DEFAULT
+  notEnoughMoney:
+    description: You don't have the required ${required}, dummy.
+    color: DEFAULT
+  notYourMenu:
+    description: This isn't your menu. Not funny.
+    color: DEFAULT
+  balance:
+    title: "{user}'s balance"
+    description: "<:money:1084680005629517985> **Wallet:** ${wallet} \n:moneybag:
+      **Bank:** ${bank}"
+    color: DEFAULT
+    timestamp: true
+  deposit:
+    title: ":white_check_mark: Successfully Deposited Money"
+    description: "<:money:1084680005629517985> **Wallet:** ${wallet} \n:moneybag:
+      **Bank:** ${bank}"
+    color: DEFAULT
+    timestamp: true
+  withdraw:
+    title: ":white_check_mark: Successfully Withdrew Money"
+    description: "<:money:1084680005629517985> **Wallet:** ${wallet} \n:moneybag:
+      **Bank:** ${bank}"
+    color: DEFAULT
+    timestamp: true
+  pay:
+    color: DEFAULT
+    fields:
+    - name: Paid
+      value: "${amount}"
+      inline: false
+    - name: Your Wallet
+      value: "${sender_wallet}"
+      inline: false
+    - name: "{receiver}'s Wallet"
+      value: "${receiver_wallet}"
+      inline: false
+    timestamp: true
+  search:
+    description: "**Where do you want to search?** \n*Pick an option below to start
+      searching that location!*"
+    color: DEFAULT
+  searchExpired:
+    description: Guess you didn't want to search anywhere?
+    color: DEFAULT
+  searchFailed:
+    title: "{user} searched the {location}"
+    description: "{message}"
+    color: DEFAULT
+    timestamp: true
+    footer:
+      text: aw man
+  searchSuccess:
+    title: "{user} searched the {location}"
+    description: "{message}"
+    color: DEFAULT
+    timestamp: true
+    footer:
+      text: you lucky ducky
+  akinator:
+    author:
+      name: "{user}'s Akinator"
+      icon_url: "{user_pfp}"
+    fields:
+    - name: Progress
+      value: "{progress}"
+      inline: false
+    description: "#{step}. {question}"
+    color: DEFAULT
+    timestamp: true
+  akinatorFinish:
+    author:
+      name: "{user}'s Akinator"
+      icon_url: "{user_pfp}"
+    image:
+      url: "{image}"
+    title: Were you thinking of {name}?
+    description: "{description}"
+    color: DEFAULT
+    timestamp: true
+  adventure:
+    author:
+      name: "{user}'s Adventure"
+      icon_url: "{user_pfp}"
+    image:
+      url: "{image}"
+    fields:
+    - name: Action 1
+      value: "{first}"
+      inline: false
+    - name: Action 2
+      value: "{second}"
+      inline: false
+    - name: Action 3
+      value: "{third}"
+      inline: false
+    description: "{scenario}"
+    color: DEFAULT
+    timestamp: true
+  adventureLoading:
+    author:
+      name: "{user}'s Adventure"
+      icon_url: "{user_pfp}"
+    title: "Generating next scenario..."
+    description: "Hang on tight!"
+    color: DEFAULT
+    timestamp: true
+  analogy:
+    author:
+      name: "{user}'s Analogy"
+      icon_url: "{user_pfp}"
+    title: "{source} and {target}?"
+    description: "{content}"
+    color: DEFAULT
+    timestamp: true
+  mbtiGuesser:
+    author:
+      name: "{user}'s MBTI Guesser"
+      icon_url: "{user_pfp}"
+    description: "{content}"
+    color: DEFAULT
+    timestamp: true
+  rizzMenu:
+    author:
+      name: "{user}'s Rizz Menu"
+      icon_url: "{user_pfp}"
+    fields:
+      - name: "Currently Rizzing"
+        value: "{selected}"
+        inline: false
+    description: "In this game, you will be engaging in conversations with an AI virtual character, and your goal is to successfully charm them into being your partner. As you converse with them, you will be awarded points for your charm and wit, or lose points for any missteps or awkward moments.\n\nYour relationship with the virtual character will evolve over time based on your Rizz score, which is a measure of your charm and charisma. The better you do in the conversations, the higher your Rizz score will be, and the more likely you will be to successfully win over your potential partner.\n\nSelect the character you want to rizz from the menu below, or create a new character!"
+    color: DEFAULT
+    timestamp: true
+  rizzProfile:
+    author:
+      name: "{user}'s Rizz Menu"
+      icon_url: "{user_pfp}"
+    title: "Viewing {name}'s Profile"
+    description: "I am {biography}"
+    fields:
+      - name: "Job"
+        value: "{job}"
+        inline: true
+      - name: "Favourite Song"
+        value: "{fav_song}"
+        inline: true
+      - name: "Favourite Food"
+        value: "{fav_food}"
+        inline: true
+      - name: "Hobbies & Interests"
+        value: "{interests}"
+        inline: false
+      - name: "Fun Fact about me"
+        value: "{fun_fact}"
+        inline: false
+    color: DEFAULT
+    timestamp: true
+  creatingCharacter:
+    title: "Creating your new Character!"
+    description: "{content}"
+    color: DEFAULT
+    timestamp: true
