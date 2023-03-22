@@ -48,6 +48,7 @@ class Character:
         while len(self.character_data.messages) > 10:
             self.character_data.messages.pop(0)
         self.character_data.messages.append({'role': 'user', 'content': prompt})
+        self.character_data.total_messages += 1
 
         incl_system_messages = [self.system] + self.character_data.messages
         response = await openai.ChatCompletion.acreate(

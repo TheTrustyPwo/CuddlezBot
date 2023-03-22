@@ -123,6 +123,7 @@ class RizzProfileMenu(DynamicRizzMenu):
         await RizzMainMenu(client=self.client, user=self.user).send(interaction)
         await interaction.followup.send(f'Noted. Deleted {self.profile.name}.')
 
+
 class RizzStatsMenu(DynamicRizzMenu):
     def __init__(
             self,
@@ -146,7 +147,8 @@ class RizzStatsMenu(DynamicRizzMenu):
         self.profile = await self.client.database.rizz_profile.get(self.character.trait_oid)
         self.user_data = await self.client.database.users.get(self.user.id)
 
-        embed = utils.get_embed('rizzStats', user=self.user, name=self.profile.name, rizz=self.character.rizz, relationship=self.character.relationship)
+        embed = utils.get_embed('rizzStats', user=self.user, name=self.profile.name, rizz=self.character.rizz,
+                                relationship=self.character.relationship, total_messages=self.character.total_messages)
         await interaction.edit_original_response(embed=embed, view=self)
 
     @discord.ui.button(label='Back', style=discord.ButtonStyle.danger, emoji='⬅️')
