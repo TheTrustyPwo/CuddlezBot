@@ -95,16 +95,3 @@ class AI(commands.Cog):
 
 async def setup(client: CuddlezBot):
     await client.add_cog(AI(client))
-    # from cuddlez.cogs.ai.rizz.profile import CharacterProfile
-    # from cuddlez.cogs.ai.rizz.character_data import CharacterData
-    # openai.api_key = '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'
-    # trait = CharacterProfile.generate()
-    # await client.database.save_rizz_profile(trait)
-    # print("SAVED RIZZ PROFILE")
-    # character = CharacterData(trait_oid=trait.oid, user_id=759285370662682644)
-    # await client.database.save_rizz_character(character)
-    # print("SAVED CHARACTER")
-    # user = await client.database.get_user(759285370662682644)
-    # user.rizzing = character.oid
-    # await client.database.save_user(user)
-    # print("DONE")

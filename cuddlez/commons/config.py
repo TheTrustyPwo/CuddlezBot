@@ -21,6 +21,6 @@ class Config:
 
     def get(self, *keys):
         if len(keys) == 1:
-            return self._data.get(keys, None)
+            return self._data.get(keys[0], None)
         else:
             return reduce(lambda data, key: data[key], keys, self._data)
