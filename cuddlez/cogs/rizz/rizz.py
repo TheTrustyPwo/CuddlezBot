@@ -1,6 +1,7 @@
 from typing import Optional
 
 import discord
+import openai.error
 from discord import app_commands
 from discord.ext import commands
 
@@ -32,7 +33,12 @@ class Rizz(commands.GroupCog):
             await character.load()
 
             prev_rizz = character.character_data.rizz
-            rizz, relationship, reply = await character.send(message.content)
+            try:
+                rizz, relationship, reply = await character.send(message.content)
+            except openai.error.OpenAIError:
+                await message.reply('An unexpected error occurred while processing this message. Please resend it.')
+                self.processing.remove(message.author.id)
+                return
 
         await message.reply(f'`@{character.profile.name}:` {reply}\n'
                             f'> **Rizz:** {rizz} `{"+" if rizz >= prev_rizz else "-"}{rizz - prev_rizz}`\n'
