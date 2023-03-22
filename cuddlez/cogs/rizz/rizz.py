@@ -31,15 +31,18 @@ class Rizz(commands.GroupCog):
             character = Character(client=self.client, character_id=user_data.rizzing)
             await character.load()
 
+            prev_rizz = character.character_data.rizz
             rizz, relationship, reply = await character.send(message.content)
 
-        await message.reply(f'{reply}\nRizz: {rizz}\nRelationship: {relationship}')
+        await message.reply(f'`@{character.profile.name}:` {reply}\n'
+                            f'> **Rizz:** {rizz} `{"+" if rizz >= prev_rizz else "-"}{rizz - prev_rizz}`\n'
+                            f'> **Relationship:** {relationship}')
         self.processing.remove(message.author.id)
 
     @app_commands.command()
     async def menu(self, interaction: discord.Interaction):
         """
-        Rizzzzz
+        Access the Main Menu for Rizz
 
         :param interaction: Interaction object
         :return:

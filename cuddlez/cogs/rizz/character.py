@@ -60,4 +60,4 @@ class Character:
         content = message.content.replace('\n', '')
         match = re.match('Rizz: (.*)Relationship: (.*)Reply: (.*)', content)
         self.character_data.rizz, self.character_data.relationship = int(match.group(1)), match.group(2)
-        return match.groups()
+        return self.character_data.rizz, self.character_data.relationship, match.group(3)
