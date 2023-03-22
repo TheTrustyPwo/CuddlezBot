@@ -114,7 +114,6 @@ class RizzProfileMenu(DynamicRizzMenu):
     @discord.ui.button(label='View Stats', style=discord.ButtonStyle.primary, emoji='📈')
     async def view_stats(self, interaction: discord.Interaction, button: discord.ui.Button):
         await RizzStatsMenu(client=self.client, user=self.user, chr_oid=self.chr_oid).send(interaction)
-        await interaction.response.send_message('L. Not implemented yet.')
 
     @discord.ui.button(label='Delete', style=discord.ButtonStyle.danger, emoji='🗑️')
     async def delete(self, interaction: discord.Interaction, button: discord.ui.Button):
