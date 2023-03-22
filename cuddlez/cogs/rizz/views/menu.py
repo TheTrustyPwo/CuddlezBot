@@ -1,8 +1,8 @@
 import discord
 
 from cuddlez.client import CuddlezBot
-from cuddlez.utils import utils
 from cuddlez.cogs.rizz.modals import CharacterCreator
+from cuddlez.utils import utils
 
 CHARACTER_EMOJIS = {
     'Stranger': '🕵',
@@ -29,7 +29,8 @@ class DynamicRizzMenu(discord.ui.View):
             characters = await self.client.database.get_user_characters(self.user.id)
 
             self.select_menu.options.clear()
-            menu_option = discord.SelectOption(label='Rizz Menu', value='Menu', description='Return to the Rizz Menu', emoji='📜')
+            menu_option = discord.SelectOption(label='Rizz Menu', value='Menu', description='Return to the Rizz Menu',
+                                               emoji='📜')
             menu_option.default = current == 'Menu'
             self.select_menu.options.append(menu_option)
 
@@ -50,6 +51,7 @@ class DynamicRizzMenu(discord.ui.View):
             await RizzMainMenu(client=self.client, user=self.user).send(interaction)
         else:
             await RizzProfileMenu(client=self.client, user=self.user, chr_oid=select.values[0]).send(interaction)
+
 
 class RizzMainMenu(DynamicRizzMenu):
     async def send(self, interaction: discord.Interaction):
@@ -85,32 +87,39 @@ class RizzProfileMenu(DynamicRizzMenu):
         super().__init__(client=client, user=user)
         self.chr_oid = chr_oid
 
+        self.profile = None
+        self.character = None
+        self.user_data = None
+
     async def send(self, interaction: discord.Interaction):
         await interaction.response.defer()
         await self.update_select_menu(current=self.chr_oid)
 
-        character = await self.client.database.rizz_characters.get(self.chr_oid)
-        profile = await self.client.database.rizz_profile.get(character.trait_oid)
-        rizzing = (await self.client.database.users.get(self.user.id)).rizzing
+        self.character = await self.client.database.rizz_characters.get(self.chr_oid)
+        self.profile = await self.client.database.rizz_profile.get(self.character.trait_oid)
+        self.user_data = await self.client.database.users.get(self.user.id)
 
-        self.rizz_now.disabled = rizzing == self.chr_oid
+        self.rizz_now.disabled = self.user_data.rizzing == self.chr_oid
 
-        embed = utils.get_embed('rizzProfile', user=self.user, name=profile.name, biography=profile.biography,
-                                job=profile.job,
-                                fav_song=profile.fav_song, fav_food=profile.fav_food, interests=profile.interests,
-                                fun_fact=profile.fun_fact)
+        embed = utils.get_embed('rizzProfile', user=self.user, name=self.profile.name, biography=self.profile.biography,
+                                job=self.profile.job, fav_song=self.profile.fav_song, fav_food=self.profile.fav_food,
+                                interests=self.profile.interests, fun_fact=self.profile.fun_fact)
         await interaction.edit_original_response(embed=embed, view=self)
 
-    @discord.ui.button(label='Rizz Now', style=discord.ButtonStyle.primary)
+    @discord.ui.button(label='Rizz Now', style=discord.ButtonStyle.primary, emoji='😳')
     async def rizz_now(self, interaction: discord.Interaction, button: discord.ui.Button):
-        user_data = await self.client.database.users.get(self.user.id)
-        user_data.rizzing = self.chr_oid
+        self.user_data.rizzing = self.chr_oid
         await interaction.response.send_message(f'Noted. Now rizzing {self.chr_oid}')
 
-    @discord.ui.button(label='View Stats', style=discord.ButtonStyle.primary)
+    @discord.ui.button(label='View Stats', style=discord.ButtonStyle.primary, emoji='📈')
     async def view_stats(self, interaction: discord.Interaction, button: discord.ui.Button):
+        await RizzStatsMenu(client=self.client, user=self.user, chr_oid=self.chr_oid).send(interaction)
         await interaction.response.send_message('L. Not implemented yet.')
 
-    @discord.ui.button(label='Delete', style=discord.ButtonStyle.danger)
+    @discord.ui.button(label='Delete', style=discord.ButtonStyle.danger, emoji='🗑️')
     async def delete(self, interaction: discord.Interaction, button: discord.ui.Button):
-        await interaction.response.send_message('L. Not implemented yet.')
+        await self.client.database.db.characters.delete_one({'_id': self.chr_oid})
+        if self.user_data.rizzing == self.chr_oid:
+            self.user_data.rizzing = None
+        await RizzMainMenu(client=self.client, user=self.user).send(interaction)
+        await interaction.followup.send(f'Noted. Deleted {self.profile.name}.')
