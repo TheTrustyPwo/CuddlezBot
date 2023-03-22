@@ -776,6 +776,23 @@ embeds:
         inline: false
     color: DEFAULT
     timestamp: true
+  rizzStats:
+    author:
+      name: "{user}'s Rizz Menu"
+      icon_url: "{user_pfp}"
+    title: "Viewing {name}'s Profile"
+    fields:
+      - name: "Rizz"
+        value: "{rizz}"
+        inline: true
+      - name: "Relationship"
+        value: "{relationship}"
+        inline: true
+      - name: "Total Messages"
+        value: "{total_messages}"
+        inline: true
+    color: DEFAULT
+    timestamp: true
   creatingCharacter:
     title: "Creating your new Character!"
     description: "{content}"

@@ -147,9 +147,9 @@ class RizzStatsMenu(DynamicRizzMenu):
         self.profile = await self.client.database.rizz_profile.get(self.character.trait_oid)
         self.user_data = await self.client.database.users.get(self.user.id)
 
-        self.rizz_now.disabled = self.user_data.rizzing == self.chr_oid
-
-        embed = utils.get_embed('rizzProfile', user=self.user, name=self.profile.name, biography=self.profile.biography,
-                                job=self.profile.job, fav_song=self.profile.fav_song, fav_food=self.profile.fav_food,
-                                interests=self.profile.interests, fun_fact=self.profile.fun_fact)
+        embed = utils.get_embed('rizzStats', user=self.user, name=self.profile.name, rizz=self.character.rizz, relationship=self.character.relationship)
         await interaction.edit_original_response(embed=embed, view=self)
+
+    @discord.ui.button(label='Back', style=discord.ButtonStyle.danger, emoji='⬅️')
+    async def back(self, interaction: discord.Interaction, button: discord.ui.Button):
+        await RizzProfileMenu(client=self.client, user=self.user, chr_oid=self.chr_oid).send(interaction)
