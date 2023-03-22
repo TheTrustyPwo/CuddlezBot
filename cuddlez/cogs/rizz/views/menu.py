@@ -47,6 +47,10 @@ class DynamicRizzMenu(discord.ui.View):
 
     @discord.ui.select()
     async def select_menu(self, interaction: discord.Interaction, select: discord.ui.Select):
+        if interaction.user != self.user:
+            await interaction.response.send_message(embed=utils.get_embed('notYourMenu'), ephemeral=True)
+            return
+
         if select.values[0] == 'Menu':
             await RizzMainMenu(client=self.client, user=self.user).send(interaction)
         else:
@@ -73,6 +77,10 @@ class RizzMainMenu(DynamicRizzMenu):
 
     @discord.ui.button(label='Create new Character', style=discord.ButtonStyle.primary, emoji='🧬')
     async def create_new_character(self, interaction: discord.Interaction, button: discord.ui.Button):
+        if interaction.user != self.user:
+            await interaction.response.send_message(embed=utils.get_embed('notYourMenu'), ephemeral=True)
+            return
+
         await interaction.response.send_modal(CharacterCreator(client=self.client, user=self.user))
 
 
@@ -108,15 +116,27 @@ class RizzProfileMenu(DynamicRizzMenu):
 
     @discord.ui.button(label='Rizz Now', style=discord.ButtonStyle.primary, emoji='😳')
     async def rizz_now(self, interaction: discord.Interaction, button: discord.ui.Button):
+        if interaction.user != self.user:
+            await interaction.response.send_message(embed=utils.get_embed('notYourMenu'), ephemeral=True)
+            return
+
         self.user_data.rizzing = self.chr_oid
         await interaction.response.send_message(f'Noted. Now rizzing {self.chr_oid}')
 
     @discord.ui.button(label='View Stats', style=discord.ButtonStyle.primary, emoji='📈')
     async def view_stats(self, interaction: discord.Interaction, button: discord.ui.Button):
+        if interaction.user != self.user:
+            await interaction.response.send_message(embed=utils.get_embed('notYourMenu'), ephemeral=True)
+            return
+
         await RizzStatsMenu(client=self.client, user=self.user, chr_oid=self.chr_oid).send(interaction)
 
     @discord.ui.button(label='Delete', style=discord.ButtonStyle.danger, emoji='🗑️')
     async def delete(self, interaction: discord.Interaction, button: discord.ui.Button):
+        if interaction.user != self.user:
+            await interaction.response.send_message(embed=utils.get_embed('notYourMenu'), ephemeral=True)
+            return
+
         await self.client.database.rizz_characters.delete(self.chr_oid)
         if self.user_data.rizzing == self.chr_oid:
             self.user_data.rizzing = None
@@ -153,4 +173,8 @@ class RizzStatsMenu(DynamicRizzMenu):
 
     @discord.ui.button(label='Back', style=discord.ButtonStyle.danger, emoji='⬅️')
     async def back(self, interaction: discord.Interaction, button: discord.ui.Button):
+        if interaction.user != self.user:
+            await interaction.response.send_message(embed=utils.get_embed('notYourMenu'), ephemeral=True)
+            return
+
         await RizzProfileMenu(client=self.client, user=self.user, chr_oid=self.chr_oid).send(interaction)

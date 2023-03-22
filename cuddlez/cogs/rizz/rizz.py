@@ -9,6 +9,7 @@ from cuddlez.client import CuddlezBot
 from cuddlez.utils import utils, parsing
 from cuddlez.cogs.rizz.views.menu import RizzMainMenu
 from cuddlez.cogs.rizz.character import Character
+from cuddlez.cogs.rizz.modals.character_creator import CharacterCreator
 
 
 class Rizz(commands.GroupCog):
@@ -55,6 +56,16 @@ class Rizz(commands.GroupCog):
         """
         menu = RizzMainMenu(client=self.client, user=interaction.user)
         await menu.send(interaction)
+
+    @app_commands.command()
+    async def create(self, interaction: discord.Interaction):
+        """
+        Generate a new character from your own description
+
+        :param interaction:
+        :return:
+        """
+        await interaction.response.send_modal(CharacterCreator(client=self.client, user=interaction.user))
 
 
 async def setup(client: CuddlezBot):
