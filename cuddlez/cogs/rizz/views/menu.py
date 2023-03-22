@@ -123,3 +123,33 @@ class RizzProfileMenu(DynamicRizzMenu):
             self.user_data.rizzing = None
         await RizzMainMenu(client=self.client, user=self.user).send(interaction)
         await interaction.followup.send(f'Noted. Deleted {self.profile.name}.')
+
+class RizzStatsMenu(DynamicRizzMenu):
+    def __init__(
+            self,
+            *,
+            client: CuddlezBot,
+            user: discord.User,
+            chr_oid: str
+    ):
+        super().__init__(client=client, user=user)
+        self.chr_oid = chr_oid
+
+        self.character = None
+        self.profile = None
+        self.user_data = None
+
+    async def send(self, interaction: discord.Interaction):
+        await interaction.response.defer()
+        await self.update_select_menu(current=self.chr_oid)
+
+        self.character = await self.client.database.rizz_characters.get(self.chr_oid)
+        self.profile = await self.client.database.rizz_profile.get(self.character.trait_oid)
+        self.user_data = await self.client.database.users.get(self.user.id)
+
+        self.rizz_now.disabled = self.user_data.rizzing == self.chr_oid
+
+        embed = utils.get_embed('rizzProfile', user=self.user, name=self.profile.name, biography=self.profile.biography,
+                                job=self.profile.job, fav_song=self.profile.fav_song, fav_food=self.profile.fav_food,
+                                interests=self.profile.interests, fun_fact=self.profile.fun_fact)
+        await interaction.edit_original_response(embed=embed, view=self)
