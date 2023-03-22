@@ -42,8 +42,10 @@ class Rizz(commands.GroupCog):
                 return
 
         await message.reply(f'`@{character.profile.name}:` {reply}\n'
-                            f'> **Rizz:** {rizz} `{"+" if rizz >= prev_rizz else "-"}{rizz - prev_rizz}`\n'
+                            f'> **Rizz:** {rizz} `{"+" if rizz >= prev_rizz else ""}{rizz - prev_rizz}`\n'
                             f'> **Relationship:** {relationship}')
+        if rizz >= 200:
+            await message.reply('YOU HAVE RIZZED DIS GIRL')
         self.processing.remove(message.author.id)
 
     @app_commands.command()

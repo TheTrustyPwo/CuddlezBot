@@ -34,6 +34,25 @@ CUSTOM_SYSTEM_MESSAGE = {
                'Fun Fact:'
 }
 
+class LeaderboardEntry(Base):
+    def __init__(
+            self,
+            *,
+            user_id: Union[int, str],
+            messages: int
+    ):
+        self.user_id = str(user_id)
+        self.messages = messages
+
+    def to_dict(self) -> dict:
+        return {
+            'user_id': self.user_id,
+            'messages': self.messages
+        }
+
+    @classmethod
+    def from_dict(cls, data: Union[dict, Mapping[str, any]]):
+        return LeaderboardEntry(user_id=data['user_id'], messages=data['messages'])
 
 class CharacterProfile(Base):
     def __init__(
@@ -45,7 +64,8 @@ class CharacterProfile(Base):
             interests: str,
             fav_song: str,
             fav_food: str,
-            fun_fact: str
+            fun_fact: str,
+            leaderboard: list[LeaderboardEntry] = None
     ):
         self.oid = str(oid)
         self.biography = biography
@@ -54,6 +74,7 @@ class CharacterProfile(Base):
         self.fav_song = fav_song
         self.fav_food = fav_food
         self.fun_fact = fun_fact
+        self.leaderboard = leaderboard
 
         if self.biography is not None:
             self.name = self.biography.split()[0]
@@ -85,11 +106,13 @@ class CharacterProfile(Base):
             'interests': self.interests,
             'favSong': self.fav_song,
             'favFood': self.fav_food,
-            'funFact': self.fun_fact
+            'funFact': self.fun_fact,
+            'leaderboard': [x.to_dict() for x in self.leaderboard]
         }
 
     @classmethod
     def from_dict(cls, data: Union[dict, Mapping[str, any]]):
+        leaderboard = [LeaderboardEntry.from_dict(x) for x in data['leaderboard']]
         return CharacterProfile(oid=uuid.UUID(data['_id']), biography=data['biography'], job=data['job'],
                                 interests=data['interests'], fav_song=data['favSong'], fav_food=data['favFood'],
-                                fun_fact=data['funFact'])
+                                fun_fact=data['funFact'], leaderboard=leaderboard)

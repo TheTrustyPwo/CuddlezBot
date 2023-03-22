@@ -51,7 +51,7 @@ async def main():
     # logger.setLevel(logging.DEBUG)
     discord.utils.setup_logging()
 
-    extensions = ['cogs.economy.economy', 'cogs.items.items', 'cogs.games.games', 'cogs.ai.ai', 'cogs.rizz.rizz', 'database.autosave']
+    extensions = ['cogs.economy.economy', 'cogs.items.items', 'cogs.games.games', 'cogs.ai.ai', 'cogs.rizz.rizz', 'cogs.admin.admin', 'database.autosave']
     database = Database(os.getenv('MONGO_URI', ''))
     async with CuddlezBot(commands.when_mentioned, database=database, initial_extensions=extensions, testing_guild_id=1009092392026124298, intents=discord.Intents.all()) as bot:
         await bot.start(os.getenv('BOT_TOKEN', ''))
