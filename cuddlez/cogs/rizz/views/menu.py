@@ -46,7 +46,10 @@ class DynamicRizzMenu(discord.ui.View):
 
     @discord.ui.select()
     async def select_menu(self, interaction: discord.Interaction, select: discord.ui.Select):
-        raise NotImplementedError
+        if select.values[0] == 'Menu':
+            await RizzMainMenu(client=self.client, user=self.user).send(interaction)
+        else:
+            await RizzProfileMenu(client=self.client, user=self.user, chr_oid=select.values[0]).send(interaction)
 
 class RizzMainMenu(DynamicRizzMenu):
     async def send(self, interaction: discord.Interaction):
@@ -65,15 +68,6 @@ class RizzMainMenu(DynamicRizzMenu):
 
         embed = utils.get_embed('rizzMenu', user=self.user, selected=selected)
         await interaction.edit_original_response(embed=embed, view=self)
-
-    @discord.ui.select()
-    async def select_menu(self, interaction: discord.Interaction, select: discord.ui.Select):
-        if select.values[0] == 'Menu':
-            await self.send(interaction)
-            return
-
-        view = RizzProfileMenu(client=self.client, user=self.user, chr_oid=select.values[0])
-        await view.send(interaction)
 
     @discord.ui.button(label='Create new Character', style=discord.ButtonStyle.primary, emoji='🧬')
     async def create_new_character(self, interaction: discord.Interaction, button: discord.ui.Button):
@@ -106,16 +100,6 @@ class RizzProfileMenu(DynamicRizzMenu):
                                 fav_song=profile.fav_song, fav_food=profile.fav_food, interests=profile.interests,
                                 fun_fact=profile.fun_fact)
         await interaction.edit_original_response(embed=embed, view=self)
-
-    @discord.ui.select()
-    async def select_menu(self, interaction: discord.Interaction, select: discord.ui.Select):
-        if select.values[0] == 'Menu':
-            view = RizzMainMenu(client=self.client, user=self.user)
-            await view.send(interaction)
-            return
-
-        self.chr_oid = select.values[0]
-        await self.send(interaction)
 
     @discord.ui.button(label='Rizz Now', style=discord.ButtonStyle.primary)
     async def rizz_now(self, interaction: discord.Interaction, button: discord.ui.Button):
