@@ -118,7 +118,7 @@ class RizzProfileMenu(DynamicRizzMenu):
 
     @discord.ui.button(label='Delete', style=discord.ButtonStyle.danger, emoji='🗑️')
     async def delete(self, interaction: discord.Interaction, button: discord.ui.Button):
-        await self.client.database.db.characters.delete_one({'_id': self.chr_oid})
+        await self.client.database.rizz_characters.delete(self.chr_oid)
         if self.user_data.rizzing == self.chr_oid:
             self.user_data.rizzing = None
         await RizzMainMenu(client=self.client, user=self.user).send(interaction)

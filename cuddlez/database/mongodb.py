@@ -69,6 +69,10 @@ class Cache:
     def set(self, key, value):
         self._data[key] = value
 
+    async def delete(self, key):
+        self._data.pop(key)
+        self._coll.delete_one({'_id': key})
+
     async def save(self, key, value=None):
         if value is None and not self.is_cached(key):
             raise RuntimeError
