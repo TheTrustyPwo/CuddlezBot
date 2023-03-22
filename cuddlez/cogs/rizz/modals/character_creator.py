@@ -18,11 +18,11 @@ class CharacterCreator(discord.ui.Modal, title='Character Creator'):
         self.user = user
 
     description = discord.ui.TextInput(
-        label='Short description of the character',
+        label='User description of the character',
         style=discord.TextStyle.long,
         placeholder='Personality, interests, job, background, etc.',
         required=True,
-        max_length=1000
+        max_length=500
     )
 
     async def on_submit(self, interaction: discord.Interaction):
