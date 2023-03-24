@@ -19,33 +19,36 @@ class Rizz(commands.GroupCog):
 
     @commands.Cog.listener(name='on_message')
     async def rizz_chat(self, message: discord.Message):
-        if message.author.id not in (636857417803497483, 759285370662682644) or message.channel.id != 1087287913202593896 or message.content.startswith('.'):
+        if message.author.id == 1052794290037866496 or message.channel.id != 1087287913202593896 or message.content.startswith('.'):
             return
 
         if message.author.id in self.processing:
             await message.reply('Please wait until the AI has replied to your previous message before sending another one.')
-            await message.delete(delay=3)
             return
 
         async with message.channel.typing():
             self.processing.add(message.author.id)
             user_data = await self.client.database.users.get(message.author.id)
+            if user_data.rizzing is None:
+                return
+
             character = Character(client=self.client, character_id=user_data.rizzing)
             await character.load()
 
             prev_rizz = character.character_data.rizz
             try:
                 rizz, relationship, reply = await character.send(message.content)
-            except openai.error.OpenAIError:
-                await message.reply('An unexpected error occurred while processing this message. Please resend it.')
+            except Exception as e:
+                await message.reply(f'An unexpected error occurred while processing this message. Please resend it. {e}')
                 self.processing.remove(message.author.id)
                 return
 
         await message.reply(f'`@{character.profile.name}:` {reply}\n'
                             f'> **Rizz:** {rizz} `{"+" if rizz >= prev_rizz else ""}{rizz - prev_rizz}`\n'
                             f'> **Relationship:** {relationship}')
-        if rizz >= 200:
-            await message.reply('YOU HAVE RIZZED DIS GIRL')
+        if rizz >= 1000:
+            standing = character.profile.update_leaderboard(message.author.id, character.character_data.total_messages)
+            await message.reply(f'YOU HAVE RIZZED DIS GIRL WITH {character.character_data.total_messages} messages AND IS LEADERBOARD #{standing}')
         self.processing.remove(message.author.id)
 
     @app_commands.command()

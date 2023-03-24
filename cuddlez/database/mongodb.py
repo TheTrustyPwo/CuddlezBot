@@ -101,9 +101,10 @@ class UserCache(Cache):
 
         user_data = await self._coll.find_one({'_id': user_id})
         if user_data is None:
-            return CuddlezUser(user_id=user_id)
+            self.set(user_id, CuddlezUser(user_id=user_id))
+        else:
+            self.set(user_id, CuddlezUser.from_dict(user_data))
 
-        self.set(user_id, CuddlezUser.from_dict(user_data))
         return self._data[user_id]
 
 

@@ -32,7 +32,7 @@ class CharacterCreator(discord.ui.Modal, title='Character Creator'):
         await self.client.database.rizz_profile.save(profile.oid, profile)
         await interaction.edit_original_response(embed=get_embed('creatingCharacter', content='Assigning you your new character...'))
         character = CharacterData(user_id=self.user.id, trait_oid=profile.oid)
-        await self.client.database.save_rizz_character(character)
+        await self.client.database.rizz_characters.save(character.oid, character)
         await interaction.edit_original_response(embed=get_embed('creatingCharacter', content='Character creation successful! Head to `/rizz menu` to view your newly created character.'))
 
     async def on_error(self, interaction: discord.Interaction, error: Exception) -> None:
